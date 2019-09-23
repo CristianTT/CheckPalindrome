@@ -43,17 +43,17 @@ public class PalindromeApp extends Application {
 	}
 
 	private void onCheckPalindromeButtonAction(ActionEvent e) {
-		String word = palindromeField.getText();
+		String word = palindromeField.getText().replace(" ", "");
 		String reverse = "";
 		for (char c : word.toCharArray()) {
 			reverse = c + reverse;
 		}
 		if (reverse.equals(word)) {
-			palindromeLabel.setText(word + " es un palíndromo");
-			palindromeLabel.setStyle("-fx-text-fill: green; -fx-font: 20 sans-serif;");
+			palindromeLabel.setText(palindromeField.getText() + " es un palíndromo");
+			palindromeLabel.setStyle("-fx-text-fill: green; -fx-font: bold 17 sans-serif;");
 		} else {
-			palindromeLabel.setText(word + " no es un palíndromo");
-			palindromeLabel.setStyle("-fx-text-fill: red; -fx-font: 20 sans-serif;");
+			palindromeLabel.setText(palindromeField.getText() + " no es un palíndromo");
+			palindromeLabel.setStyle("-fx-text-fill: red; -fx-font: bold 17 sans-serif;");
 		}
 		palindromeField.setText("");
 	}
